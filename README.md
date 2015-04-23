@@ -22,8 +22,10 @@
 √ https://github.com/twitter/typeahead.js
   使用了typeahead， 未使用动态数据获取的 bloodhunt， 貌似bloodhunt可以指定 提示选项的 format 但是不能自定义 matcher 逻辑
   在matcher中 不仅匹配汉字，也会匹配拼音
+  
 √ https://github.com/padolsey-archive/jquery.fn/tree/master/cross-domain-ajax
   这个用来做跨域的...
+  
 √ http://string2pinyin.sinaapp.com/?str=
   这个是汉字转拼音的接口，接口返回数据中有doc文档的地址，不知道这个接口会维护多久, 自己搭建汉字拼音转换器课参考 https://github.com/overtrue/pinyin
 
