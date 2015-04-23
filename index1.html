@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title></title>
+
+  <!-- type ahead -->
+  <!--<script src="./handlebars.js"></script>-->
+  <script src="./jquery-1.10.2.min.js"></script>
+  <script src="./typeahead.bundle.js"></script>
+
+  <!-- pinyin -->
+  <!--<script src="./jquery.xdomainajax.js"></script>-->
+  <!--<script src="./qunit.js"></script>-->
+  <script src="./pinyin.api.js"></script>
+
+</head>
+<body>
+  <div id="types">
+    <input class="typeahead" type="text" placeholder="">
+  </div>
+  <script>
+
+    $('#types .typeahead').typeahead({
+      hint: true,
+      hightlight: true,
+      minLength: 1
+    }, {
+      name: 'types',
+      displayKey: 'value',
+      source: PinYinApi.getPinyinSource()
+    });
+
+    $('#types .typeahead').keydown((function (_this) {
+      return function (e) {
+        if (e.which === 13) {
+          $('.tt-dropdown-menu').hide();
+          return $('#types .typeahead').val($('.tt-suggestion p').first().html());
+        }
+      };
+    })(this));
+
+  </script>
+</body>
+</html>
